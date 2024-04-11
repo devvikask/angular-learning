@@ -1,0 +1,10 @@
+Password Length,
+
+Include Numbers,
+Include Lowercase Characters,
+Include Uppercase Characters,
+Begin With A Letter,
+Include Symbols,
+No Similar Characters,
+No Duplicate Characters,
+No Sequential Characters

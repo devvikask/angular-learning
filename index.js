@@ -5,7 +5,7 @@ document
         // JavaScript logic for generating password based on user selections
         // Update the generated password display accordingly
         function generatePassword() {
-            const length = parseInt(
+            let length = parseInt(
                 document.getElementById("passwordLength").value
             );
             const includeNumbers =
@@ -16,16 +16,22 @@ document
                 document.getElementById("includeUppercase").checked;
             const includeSymbols =
                 document.getElementById("includeSymbols").checked;
-            const beginWithLetter =
-                document.getElementById("beginWithLetter").checked;
-            const noSimilarChars =
-                document.getElementById("noSimilarChars").checked;
-            const noDuplicateChars =
-                document.getElementById("noDuplicateChars").checked;
-            const noSequentialChars =
-                document.getElementById("noSequentialChars").checked;
+            const beginWithLetter =false;
+            const noSimilarChars =false;
+            const noDuplicateChars =false;
+            const noSequentialChars =false;
+
+            // const beginWithLetter =
+            //     document.getElementById("beginWithLetter").checked;
+            // const noSimilarChars =
+            //     document.getElementById("noSimilarChars").checked;
+            // const noDuplicateChars =
+            //     document.getElementById("noDuplicateChars").checked;
+            // const noSequentialChars =
+            //     document.getElementById("noSequentialChars").checked;
 
             let charset = "";
+            let defaultValue = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%";
             if (includeNumbers) charset += "0123456789";
             if (includeLowercase) charset += "abcdefghijklmnopqrstuvwxyz";
             if (includeUppercase) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -38,7 +44,7 @@ document
                 );
                 length--;
             }
-
+            charset = charset.length ? charset : defaultValue;
             for (let i = 0; i < length; i++) {
                 let char = getRandomChar(charset);
                 if (noSimilarChars && isSimilar(char)) {
@@ -78,10 +84,7 @@ document
             const prevCharIndex = sequentialChars.indexOf(prevChar);
             return Math.abs(charIndex - prevCharIndex) === 1;
         }
-
-        document
-            .getElementById("generatePassword")
-            .addEventListener("click", generatePassword);
+        generatePassword();
     });
 
 document

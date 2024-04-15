@@ -7,7 +7,7 @@
       name="description"
       content="Generate random passwords securely on your device without storing them on our website. Create strong passwords and learn essential tips for password security."
     />
-    <meta name="google-adsense-account" content="ca-pub-2238034338271908">
+    <meta name="google-adsense-account" content="ca-pub-2238034338271908" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -42,8 +42,15 @@
         flex-direction: column;
         min-height: 100vh;
       }
+
+      .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+      }
       .footer {
         margin-top: auto;
+        display: block;
         position: fixed;
         width: 100%;
         bottom: 0;
@@ -58,6 +65,9 @@
         padding: 50px;
         border-radius: 25px;
       }
+      .content-container {
+        margin-top: 70px !important;
+      }
     </style>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -65,7 +75,7 @@
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    <header>
+    <header class="header mb-5">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Random Password Generator</a>
@@ -102,7 +112,7 @@
         </div>
       </nav>
     </header>
-    <div class="container mt-5">
+    <div class="content-container container mt-5">
       <div class="main-container">
         <h1 class="mb-4">Random Password Generator</h1>
         <div class="input-row mb-4">

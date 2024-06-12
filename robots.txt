@@ -1,7 +1,2 @@
-User-agent: Googlebot
-Disallow: /nogooglebot/
-
 User-agent: *
-Allow: /
-
-Sitemap: https://random-password-generator.net/sitemap.xml
+Disallow:
